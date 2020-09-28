@@ -76,7 +76,7 @@ public class Airline
             }
             else if ( seating[40] == true ) // If seating[40] is true then economy class is fully booked
             {
-                if ( seating[15] == true) // If seating[15] is true then first class (and therefore whole flight) is fully booked
+                if ( seating[15] == true) // If seating[15] is true then first class (therefore whole flight) is fully booked
                 {
                     System.out.println("Sorry, flight fully booked. Next flight is in 3 hours.");
                     System.exit(0);// exits program
