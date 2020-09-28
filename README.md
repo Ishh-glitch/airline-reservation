@@ -1,5 +1,6 @@
 # airline-reservation
 import java.util.Scanner;
+import java.io.*;
 
 public class Airline 
 {
@@ -28,7 +29,7 @@ public class Airline
         }
     }
 
-    public void firstClassSeat() // assign first class seat
+    public void firstClassSeat() // assign a first class seat
     {
         for ( int count = 1; count <= 15; count++ )
         {
@@ -42,7 +43,7 @@ public class Airline
             {
                 if ( seating[40] == true) // If seating[40] is true then economy (and therefore whole flight) is fully booked
                 {
-                    System.out.println("Sorry, flight fully booked. Next flight is in 3 hours.");
+                    System.out.println("Sorry this flight is fully booked, please try again in 3 hrs");
                 }
                 else // ask passenger if they would like an economy ticket instead
                 {
@@ -63,14 +64,14 @@ public class Airline
         }
     }   
 
-    public void economySeat() // assign an economy seat
+    public void economySeat() // assigns a economy seat
     {
         for ( int count = 16; count <= 40; count++ )
         {
-            if ( seating[count] == false ) // if false, then a seat is available for assignment
+            if ( seating[count] == false ) // if its false than a seat can be assgned
             {
-                seating[count] = true; // assign seat
-                System.out.println("Economy. Seat# %d\n", count);
+                seating[count] = true; // assign a seat
+                System.out.printf("Economy. Seat# %d\n", count);
                 break;
             }
             else if ( seating[40] == true ) // If seating[40] is true then economy is fully booked
@@ -82,16 +83,16 @@ public class Airline
                 }
                 else // ask if passenger would like a first class ticket instead
                 {
-                    System.out.println("Economy is fully booked. Would you like First Class? 1 for Yes 2 for No");
+                    System.out.println("Economy is fully booked. Would you like to go to First class? 1 for Yes 2 for No");
                     int choice = input.nextInt();
-                    if ( choice == 1 )
+                    if ( choice == 1 ) // this is if the user wants first class
                     {
                         firstClassSeat();
                         start();
                     }
                     else
                     {
-                        System.out.println("Next flight is in 3 hours");
+                        System.out.println("Next flight is in 3 hours"); // tells user that another flight is available in 3 hrs
                         System.exit(0);
                     }
                 }
