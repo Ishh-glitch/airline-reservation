@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Airline 
 {
-    boolean[] seating = new boolean[41]; /* create 40 seat numbers (array[0] will not be used). Empty seat indicated by false*/
+    boolean[] seating = new boolean[41]; /* creates 40 seat numbers (array[0] will not be used). Empty seat indicated by false*/
     Scanner userinput = new Scanner(System.in);
 
     public void start()
