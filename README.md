@@ -7,6 +7,8 @@ package com.mycompany.booking;
 import java.util.*;
 
 
+
+
 public class Airline {
  static boolean[] seating = new boolean[41]; /* creates 40 seat numbers (array[0] will not be used). Empty seat indicated by false*/
  static Scanner userinput = new Scanner(System.in);
@@ -21,8 +23,9 @@ static private int card_number;
 static private int expiration_date;
 static private int security_number;
 static public String plan;
+
 public static void Booking_information(){
-System.out.println("To use our services you first have to register ");
+System.out.println("WELCOME TO AIRBOOKING SERVICE HOW MAY WE HELP YOU TODAY\n To use our services you first have to register ");
 register();
 }
 
@@ -60,13 +63,13 @@ register();
     {
         System.out.println("Type Standsted for London Stansted, JFK for New york (JFK) International Airport, Sydney airport for Sydney Sydney Airport:");
          departure = userinput.next();
-        if (departure == "Stansted" ){
+        if (departure == "stansted" ){
             System.out.println("You have chosen London Stansted");      
     }
         else if (departure == "JFK"){
       System.out.println("You have chosen New york JFK International Airport");
         }
-        else if (departure == "Sydney airport"){
+        else if (departure == "sydney airport"){
         System.out.println("You have chosen Sydney Sydney Airport");
         }
         Arrival_destination();
@@ -76,11 +79,11 @@ register();
    destination = userinput.next();
     System.out.printf("You have chosen. %S", destination);
     System.out.println("\nWhat class would you like to be seated in first class or economy type it in");
-    String customer = userinput.next();
+     customer = userinput.next();
     if(customer == "first class"){
     firstClassSeat();
     }
-    else  {
+    else if (customer == "economy") {
     economySeat();
     }
     
@@ -88,7 +91,7 @@ register();
 
     public static void makeReservation()
     {
-        System.out.println("Please type 1 to make a reservation or 2 to not: ");
+      
         int section = userinput.nextInt();
         if ( section == 1 )
         {
@@ -230,10 +233,11 @@ register();
    }
     
       public static void main(String[] args) {
-        start();
+        
+      start();
+        
     }
     
     }
-    
     
 
