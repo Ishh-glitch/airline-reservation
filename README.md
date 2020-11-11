@@ -83,7 +83,7 @@ register();
     if(customer == "first class"){
     firstClassSeat();
     }
-    else if (customer == "economy") {
+    else  {
     economySeat();
     }
     
@@ -91,7 +91,7 @@ register();
 
     public static void makeReservation()
     {
-      
+      System.out.println("To start reservation type 1 if not type 2:");
         int section = userinput.nextInt();
         if ( section == 1 )
         {
@@ -188,47 +188,41 @@ register();
       if (trip == "one way"){
           System.out.println("You have chosen a one way trip thank you for you joining us today.");
       }
-      else if (trip == "round way") { 
+      else { 
               System.out.println("You have chosen a round way trip thank you for joining us today.");    
           }
       showInfo();
       }
-   public static void showInfo()
+
+    /**
+     *
+     */
+    public static void showInfo()
     {
-    System.out.println("Would you like to see the plan before you pay yes or no:");
+    System.out.println("HERE IS YOUR PLAN :");
     plan = userinput.next();
-    if (plan == "yes"){
-        System.out.printf("Place of departure is: %s\n", departure);
+   
+        System.out.printf("Place of departure is:%s\n", departure);
         System.out.printf("Destination place is: %s\n", destination);
         System.out.printf("What class: %s\n", customer );
         System.out.printf("Seat number is: %d\n", seat);
         System.out.printf("type of trip: %s\n", trip );
     Payment();
-    }
-        else {
-                Payment();
-                }
-        
+    
     
     }
    public static void Payment(){
-   System.out.println("Please enter Your Full Name:");
+   System.out.println("PLEASE ENTER YOUR FULL NAME:");
    Full_name = userinput.next();
-   System.out.println("Please enter a card number:");
+   System.out.println("PLEASE ENTER A CARD NUMBER:");
    card_number = userinput.nextInt();
-   if (card_number > 11){
-   System.out.println("Error");
-   }
-   System.out.println("Please enter expiration date:");
+   
+   System.out.println("PLEASE ENTER AN EXPIRATION DATE:");
    expiration_date = userinput.nextInt();
-   System.out.println("Please enter the cards security number:");
+   System.out.println("PLEASE ENTER THE CARDS SECURITY NUMBER:");
    security_number = userinput.nextInt();
-   if (security_number > 3){
-   System.out.println("Error");
-   }
-   else{
-   System.out.println("\nThank you for using our services");
-   }
+  System.out.println("\nTHANK YOU FOR USING OUT SERVICES");
+   
    System.exit(0);
    }
     
@@ -239,5 +233,3 @@ register();
     }
     
     }
-    
-
