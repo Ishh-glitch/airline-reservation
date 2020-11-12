@@ -39,14 +39,14 @@ register();
     public static void register()
     {
         System.out.println("--------------------------------------------------------------------------");
-       System.out.println("To register please enter in a username:");
+       System.out.println("To register please enter in a username:");//prompts user to enter in a username
     
      String username;
      username = userinput.next();
-     System.out.println("Please enter a password:");
+     System.out.println("Please enter a password:");//prompts user to enter in a password
      String password;
      password = userinput.next();
-    System.out.println("Thank you if you now want to make a reservation please type 1 if not type 2:");
+    System.out.println("Thank you if you now want to make a reservation please type 1 if not type 2:");// System asks user if they want to make a reservation
      int user;
      user = userinput.nextInt();
      if (user ==1)
@@ -61,10 +61,10 @@ register();
     }
     public static void departure_place()
     {
-        System.out.println("Type Standsted for London Stansted, JFK for New york (JFK) International Airport, Sydney airport for Sydney Sydney Airport:");
+        System.out.println("Type your departure place either Standsted for London Stansted, JFK for New york (JFK) International Airport, Sydney airport for Sydney Sydney Airport:");//System prompts the user to type one of these airports as their departure place
          departure = userinput.next();
         if (departure == "stansted" ){
-            System.out.println("You have chosen London Stansted");      
+            System.out.println("You have chosen London Stansted");     //whichever airport is chosen the system shows a message informing the user of what they picked
     }
         else if (departure == "JFK"){
       System.out.println("You have chosen New york JFK International Airport");
@@ -75,10 +75,10 @@ register();
         Arrival_destination();
     }
     public static void Arrival_destination(){
-    System.out.println("Now please enter in your destination:");
+    System.out.println("Now please enter in your destination:");//System asks user to enter in their destination
    destination = userinput.next();
     System.out.printf("You have chosen. %S", destination);
-    System.out.println("\nWhat class would you like to be seated in first class or economy type it in");
+    System.out.println("\nWhat class would you like to be seated in first class or economy type it in");// the system prompts the user to pick either first class or economy 
      customer = userinput.next();
     if(customer == "first class"){
     firstClassSeat();
@@ -183,7 +183,7 @@ register();
     }
     public static void roundway_oneway()
     {
-      System.out.println("What trip would you like one way or round way:");
+      System.out.println("What trip would you like one way or round way:");//system asks user if they want a round way or one way trip
        trip = userinput.next();
       if (trip == "one way"){
           System.out.println("You have chosen a one way trip thank you for you joining us today.");
@@ -197,7 +197,7 @@ register();
     /**
      *
      */
-    public static void showInfo()
+    public static void showInfo()// this method shows the users booking plan.
     {
     System.out.println("HERE IS YOUR PLAN :");
     plan = userinput.next();
@@ -211,24 +211,33 @@ register();
     
     
     }
-   public static void Payment(){
+   public static void Payment(){//System prompts the user to type in their card details in order to pay.
    System.out.println("PLEASE ENTER YOUR FULL NAME:");
    Full_name = userinput.next();
    System.out.println("PLEASE ENTER A CARD NUMBER:");
    card_number = userinput.nextInt();
-   
+   if(card_number > 11){System.out.println("Error invalid input");
+   Payment();
+   }
    System.out.println("PLEASE ENTER AN EXPIRATION DATE:");
    expiration_date = userinput.nextInt();
-   System.out.println("PLEASE ENTER THE CARDS SECURITY NUMBER:");
+   if(expiration_date > 4){System.out.println("Error invalid input");
+   Payment();
+   }
+      System.out.println("PLEASE ENTER THE CARDS SECURITY NUMBER:");
    security_number = userinput.nextInt();
-  System.out.println("\nTHANK YOU FOR USING OUT SERVICES");
+   if(security_number > 11){System.out.println("Error invalid input");
+   Payment();
+   }
+  
+  System.out.println("\nTHANK YOU FOR USING OUR SERVICES");
    
    System.exit(0);
    }
     
       public static void main(String[] args) {
         
-      start();
+      start();// start method in order to beginthe process
         
     }
     
